@@ -6,7 +6,7 @@ const ProjectAbstractPage = () => {
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <h2 className="text-4xl font-bold mb-6">Project Abstract</h2>
         <p className="text-xl text-gray-800">
-          The ”Social Sensor” project is a comprehensive initiative aimed at
+          The ”EchoSphere” project is a comprehensive initiative aimed at
           tackling the growing problem of disparaging remarks and misinformation
           directed towards public figures, with an initial focus on addressing
           these issues within news portals before extending its scope to include
@@ -31,7 +31,7 @@ const ProjectAbstractPage = () => {
           project’s systematic approach in addressing identified issues.
           <br />
           <br />
-          Moreover, the ”Social Sensor” project aims to provide a holistic
+          Moreover, the ”EchoSphere” project aims to provide a holistic
           solution to combat neg- ativity and misinformation targeting public
           figures. By identifying instances of hate speech and damaging
           communications directed towards public figures, the project seeks to
