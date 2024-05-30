@@ -1,10 +1,54 @@
 import PropTypes from "prop-types";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useEffect } from "react";
+import Shepherd from "shepherd.js";
+import "shepherd.js/dist/css/shepherd.css";
 import Header from "../Components/Header";
 import Layout from "../Layout/Layout";
 import Footer from "../Components/Footer";
 
 const AboutPage = () => {
+  useEffect(() => {
+    const tour = new Shepherd.Tour({
+      useModalOverlay: true,
+      defaultStepOptions: {
+        classes: "shepherd-theme-arrows",
+        scrollTo: true,
+        cancelIcon: {
+          enabled: true,
+        },
+        canClickTarget: false,
+      },
+    });
+
+    tour.addStep({
+      id: "team-member",
+      text: `
+        <div class="text-center">
+          <h2 class="text-2xl font-bold mb-2">Meet the Supercool Creator of Echosphere</h2>
+          <p class="mb-4">Learn about Ujjwal Jha and his journey in the world of technology.</p>
+        </div>
+      `,
+      attachTo: {
+        element: ".team-member",
+        on: "left",
+      },
+      buttons: [
+        {
+          text: "Done",
+          action: tour.complete,
+          classes: "bg-blue-500 text-white py-2 px-4 rounded mt-2",
+        },
+      ],
+    });
+
+    tour.start();
+
+    return () => {
+      tour.cancel();
+    };
+  }, []);
+
   return (
     <div className="flex flex-col justify-center items-center min-h-screen">
       <Header />
@@ -22,7 +66,7 @@ const AboutPage = () => {
                 </span>
               </h1>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center team-member">
               <TeamMember
                 imageSrc="https://avatars.githubusercontent.com/u/97169735?v=4"
                 name="Ujjwal Jha"
@@ -53,7 +97,7 @@ const TeamMember = ({
   InstagramLink,
 }) => {
   return (
-    <div className="rounded-2xl shadow-md p-6 bg-stone-50 hover:shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-400 flex flex-col items-center justify-center">
+    <div className="w-80 h-104 rounded-2xl shadow-md p-6 bg-stone-50 hover:shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-400 flex flex-col items-center justify-center">
       <img
         src={imageSrc}
         className="team-img h-40 w-40 mb-4 rounded-full object-cover"
