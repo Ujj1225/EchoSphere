@@ -23,8 +23,8 @@ const LandingPage = () => {
     });
 
     tour.addStep({
-      title: "Welcome to Our Landing Page",
-      text: 'Welcome to our landing page! Let\'s take a tour to explore what we have to offer. Click "Next" to begin.',
+      title: "Welcome to EchoSphere",
+      text: 'This is our landing page! Let\'s take a tour to explore what we have to offer. Click "Next" to begin.',
       attachTo: {
         element: ".hero-section",
         on: "bottom",

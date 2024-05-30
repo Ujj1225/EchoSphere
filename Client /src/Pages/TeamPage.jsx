@@ -26,16 +26,6 @@ const AboutPage = () => {
             <div style={{ maxWidth: customWidth }} className="mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-4 ">
                 <TeamMember
-                  imageSrc="https://avatars.githubusercontent.com/u/98498538?v=4"
-                  name="Raj Kumar Paneru"
-                  role="Computer Engineering Student"
-                  description="Passionate Pulchowk Campus computer engineering student, fueled by a relentless pursuit of knowledge and innovation, ready to tackle any challenge in the ever-evolving tech landscape"
-                  FacebookLink="https://www.facebook.com/R.K.Paneru02"
-                  GitHubLink="https://github.com/Rajkumarpaneru18"
-                  InstagramLink={"#"}
-                  TwitterLink={"#"}
-                />
-                <TeamMember
                   imageSrc="https://avatars.githubusercontent.com/u/97169735?v=4"
                   name="Ujjwal Jha"
                   role="Computer Engineering Student"
@@ -44,16 +34,6 @@ const AboutPage = () => {
                   InstagramLink={"#"}
                   TwitterLink={"#"}
                   GitHubLink="https://github.com/Ujj1225"
-                />
-                <TeamMember
-                  imageSrc="https://avatars.githubusercontent.com/u/119090328?v=4"
-                  name="Yujan Subedi"
-                  role="Computer Engineering Student"
-                  description="As a computer engineering student at Pulchowk Campus, I'm on a mission to harness the power of technology to solve complex problems, drive progress, and inspire positive change"
-                  FacebookLink="#"
-                  TwitterLink={"#"}
-                  InstagramLink={"#"}
-                  GitHubLink="https://github.com/YujanSubedi"
                 />
               </div>
             </div>
