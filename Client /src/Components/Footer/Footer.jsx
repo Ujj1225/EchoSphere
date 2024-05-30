@@ -9,7 +9,7 @@ const Footer = () => {
         <hr className="w-full border-gray-400 border-t-2" />
         <div className="mx-auto flex  justify-evenly items-center w-full">
           <div className="flex  flex-col gap-1 justify-center items-start">
-            <div className="text-xl text-black">Social Sensor Web app</div>
+            <div className="text-xl text-black">EchoSphere Web app</div>
             <div className="mt-3 flex text-xl gap-2 text-black ">
               <FaFacebook className="hover:text-purple-900" />
               <FaInstagram className="hover:text-purple-900" />
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-black text-lg">
-          &#169; Social Sensor 2024. All rights reserved.
+          &#169; EchoSphere 2024. All rights reserved.
         </div>
       </div>
     </div>

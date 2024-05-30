@@ -5,16 +5,15 @@ import Layout from "../Layout/Layout";
 import Footer from "../Components/Footer";
 
 const AboutPage = () => {
-  const customWidth = "80rem";
   return (
-    <div className="mx-32 flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center min-h-screen">
       <Header />
       <Layout>
         <div className="flex justify-center items-center my-24 mb-32">
           <section className="flex flex-col gap-20 justify-center items-center">
             {/* Top section */}
             <div className="flex flex-col items-center">
-              <h1 className="text-6xl font-bold text-cente">
+              <h1 className="text-6xl font-bold text-center">
                 <span className="relative inline-block">
                   <span className="absolute inset-x-0 bottom-0 h-1 bg-black"></span>
                   <span className="text-black font-bold font-sans">
@@ -23,19 +22,17 @@ const AboutPage = () => {
                 </span>
               </h1>
             </div>
-            <div style={{ maxWidth: customWidth }} className="mx-auto">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-4 ">
-                <TeamMember
-                  imageSrc="https://avatars.githubusercontent.com/u/97169735?v=4"
-                  name="Ujjwal Jha"
-                  role="Computer Engineering Student"
-                  description="Pulchowk Campus student in computer engineering, committed to pushing boundaries, breaking barriers, and leaving a mark of excellence in the world of technology"
-                  FacebookLink="#"
-                  InstagramLink={"#"}
-                  TwitterLink={"#"}
-                  GitHubLink="https://github.com/Ujj1225"
-                />
-              </div>
+            <div className="flex justify-center items-center">
+              <TeamMember
+                imageSrc="https://avatars.githubusercontent.com/u/97169735?v=4"
+                name="Ujjwal Jha"
+                role="Computer Engineering Student"
+                description="Pulchowk Campus student in computer engineering, committed to pushing boundaries, breaking barriers, and leaving a mark of excellence in the world of technology"
+                FacebookLink="#"
+                InstagramLink="#"
+                TwitterLink="#"
+                GitHubLink="https://github.com/Ujj1225"
+              />
             </div>
           </section>
         </div>
@@ -44,6 +41,7 @@ const AboutPage = () => {
     </div>
   );
 };
+
 const TeamMember = ({
   imageSrc,
   name,
@@ -55,10 +53,10 @@ const TeamMember = ({
   InstagramLink,
 }) => {
   return (
-    <div className="rounded-2xl shadow-md p-6 bg-stone-50 hover:shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-400">
+    <div className="rounded-2xl shadow-md p-6 bg-stone-50 hover:shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-400 flex flex-col items-center justify-center">
       <img
         src={imageSrc}
-        className="team-img mx-auto h-40 mb-4 rounded-full object-cover"
+        className="team-img h-40 w-40 mb-4 rounded-full object-cover"
         alt={`${name}'s Photo`}
       />
       <h3 className="text-xl font-bold mb-2 text-center uppercase">{name}</h3>
@@ -67,7 +65,7 @@ const TeamMember = ({
       </div>
       <p className="text-gray-600 text-center">{description}</p>
 
-      {/* Adding icons  */}
+      {/* Adding icons */}
       <ul className="team-icon flex justify-center mt-4 space-x-4">
         {FacebookLink && (
           <a href={FacebookLink} target="_blank" rel="noopener noreferrer">

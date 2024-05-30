@@ -49,7 +49,7 @@ const FeedbackForm = () => {
   return (
     <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
       <form>
-        <div className="mr-28">
+        <div className="mr-28 mb-3">
           <label htmlFor="name" className="block font-bold mb-1">
             Name
           </label>
@@ -60,7 +60,7 @@ const FeedbackForm = () => {
             placeholder="Enter your name"
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label htmlFor="email" className="block font-bold mb-1">
             Email
           </label>
@@ -71,7 +71,7 @@ const FeedbackForm = () => {
             placeholder="Enter your email"
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label htmlFor="feedback" className="block font-bold mb-1">
             Feedback
           </label>

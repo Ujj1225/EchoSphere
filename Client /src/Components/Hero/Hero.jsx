@@ -21,7 +21,7 @@ const HeroSection = () => {
             Digital Safety
           </p>
           <p className="text-xl text-black font-serif">
-            Introducing Social Sensor for Nepal Social Media Environment
+            Introducing EchoSphere for Nepal Social Media Environment
           </p>
         </div>
         <Link to="/mainpage">

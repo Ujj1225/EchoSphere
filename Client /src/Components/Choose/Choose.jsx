@@ -60,7 +60,7 @@ const ChooseComponent = () => {
       <div className=" py-12 px-4">
         {/* Heading */}
         <h2 className="text-3xl font-bold text-gray-800 mb-8">
-          Why Choose Social Sentiment?
+          Why Choose EchoSphere?
         </h2>
 
         {/* Outer border */}

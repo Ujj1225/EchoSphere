@@ -73,7 +73,7 @@ const FeatureComponent = () => {
       <div className="py-12 px-4 flex flex-col items-center justify-center font-montserrat">
         <h2 className="text-3xl font-bold text-gray-800 mb-8">How It Works</h2>
         <p className="text-black text-sm text-center w-1/2 mb-8">
-          The Social Sensor web app monitors social media for content related to
+          The EchoSphere web app monitors social media for content related to
           public figures, using advanced scraping and sentiment analysis. It
           alerts users in real-time if harmful sentiment is detected, providing
           timely awareness and protection.
