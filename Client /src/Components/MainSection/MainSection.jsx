@@ -13,8 +13,6 @@ import {
   Pie,
   Cell,
 } from "recharts";
-import Shepherd from "shepherd.js";
-import "shepherd.js/dist/css/shepherd.css";
 
 function MainSection() {
   const [publicFigure, setPublicFigure] = useState("kp oli");
@@ -22,151 +20,6 @@ function MainSection() {
   const [keyword, setKeyword] = useState("");
   const [sentimentResult, setSentimentResult] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
-
-  useEffect(() => {
-    const tour = new Shepherd.Tour({
-      useModalOverlay: true,
-      defaultStepOptions: {
-        classes: "shepherd-theme-arrows",
-        scrollTo: true,
-        cancelIcon: {
-          enabled: true,
-        },
-        canClickTarget: false,
-      },
-    });
-
-    // Add steps to the tour
-    const steps = [
-      {
-        id: "intro",
-        text: `
-        <div class="text-center">
-          <h2 class="text-2xl font-bold mb-2">Welcome to Sentiment Analysis</h2>
-          <p class="mb-4">Let's explore the features of this page.</p>
-        </div>
-      `,
-        attachTo: {
-          element: ".header",
-          on: "bottom",
-        },
-        buttons: [
-          {
-            text: "Next",
-            action: tour.next,
-          },
-        ],
-      },
-      {
-        id: "input",
-        text: `
-        <div class="text-center">
-          <h2 class="text-xl font-bold mb-2">Enter a Keyword</h2>
-          <p class="mb-4">Type a keyword to analyze sentiment.</p>
-        </div>
-      `,
-        attachTo: {
-          element: "#keyword",
-          on: "top",
-        },
-        buttons: [
-          {
-            text: "Next",
-            action: tour.next,
-          },
-        ],
-      },
-      {
-        id: "submit",
-        text: `
-        <div class="text-center">
-          <h2 class="text-xl font-bold mb-2">Submit</h2>
-          <p class="mb-4">Click this button to see the result.</p>
-        </div>
-      `,
-        attachTo: {
-          element: "button[type='submit']",
-          on: "top",
-        },
-        buttons: [
-          {
-            text: "Next",
-            action: tour.next,
-          },
-        ],
-      },
-      {
-        id: "result",
-        text: `
-        <div class="text-center">
-          <h2 class="text-xl font-bold mb-2">Sentiment Result</h2>
-          <p class="mb-4">Here you can see the sentiment analysis result.</p>
-        </div>
-      `,
-        attachTo: {
-          element: ".result",
-          on: "top",
-        },
-        buttons: [
-          {
-            text: "Next",
-            action: tour.next,
-          },
-        ],
-      },
-      {
-        id: "charts",
-        text: `
-        <div class="text-center">
-          <h2 class="text-xl font-bold mb-2">Visual Charts</h2>
-          <p class="mb-4">View the sentiment data in Bar and Pie charts.</p>
-        </div>
-      `,
-        attachTo: {
-          element: ".charts",
-          on: "top",
-        },
-        buttons: [
-          {
-            text: "Next",
-            action: tour.next,
-          },
-        ],
-      },
-      {
-        id: "news-categories",
-        text: `
-        <div class="text-center">
-          <h2 class="text-xl font-bold mb-2">News Categories</h2>
-          <p class="mb-4">Filter news based on sentiment categories.</p>
-        </div>
-      `,
-        attachTo: {
-          element: ".news-categories",
-          on: "top",
-        },
-        buttons: [
-          {
-            text: "Finish",
-            action: tour.complete,
-          },
-        ],
-      },
-    ];
-
-    // Add steps to the tour
-    steps.forEach((step) => {
-      tour.addStep(step);
-    });
-
-    // Start the tour
-    tour.start();
-
-    return () => {
-      // Clean up the tour when the component unmounts
-      tour.complete();
-    };
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -195,6 +48,8 @@ function MainSection() {
         setSentimentResult(data.Sentiment);
         setNewsText(data.Title);
       }
+
+      // console.log(sentimentResult);
     } catch (error) {
       console.error("Error analyzing sentiment:", error);
     }
@@ -272,21 +127,29 @@ function MainSection() {
     }
   };
 
+  useEffect(() => {
+    const positiveButton = document.getElementById("positiveButton");
+
+    if (positiveButton) {
+      positiveButton.click();
+    }
+  }, []);
+
   //input part
   return (
-    <div className="flex flex-col">
-      <Header className="header" />
-      <div className="mx-32 mt-10 min-h-screen">
+    <div className=" flex flex-col  ">
+      <Header />
+      <div className=" mx-32 mt-10 min-h-screen">
         <div className="bg-white">
           <h1 className="text-4xl font-bold mb-4 text-gray-800">
             Sentiment Analysis
           </h1>
           <span className="text-gray-400">
-            What's the sentiment of the media coverage on public figure?
+            What's the sentiment of the media coverage on public figure ?
           </span>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block mb-2" htmlFor="keyword">
+              <label className="block  mb-2" htmlFor="keyword">
                 Enter a Keyword
               </label>
               <input
@@ -315,8 +178,10 @@ function MainSection() {
           </form>
 
           {sentimentResult && (
-            <div className="mt-16 result">
-              <h2 className="text-4xl font-bold mb-4 text-gray-800">Result</h2>
+            <div className="mt-16">
+              <h2 className="text-4xl font-bold mb-4 text-gray-800  ">
+                Result
+              </h2>
               <ul>
                 {Object.values(sentimentResult).map((score, index) => {
                   let sentiment;
