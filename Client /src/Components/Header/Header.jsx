@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 
-const Header = () => {
+
+const Header = ({startTour}) => {
   return (
     <div className="header-section">
       <header className="w-screen h-32 border-b-2 border-gray-300 flex justify-between items-center px-8 py-4">
@@ -31,12 +31,12 @@ const Header = () => {
             </ul>
           </div>
 
-          {/* Get Started button */}
-          <Link to="/mainsection">
-            <button className="mx-28 bg-indigo-700 text-white  text-xl px-3 py-2 rounded-2xl hover:bg-violet-400">
-              Get Started
-            </button>
-          </Link>
+          <button
+            onClick={startTour}
+            className="mx-28 bg-indigo-700 text-white  text-xl px-3 py-2 rounded-2xl hover:bg-violet-400"
+          >
+            Take A Tour
+          </button>
         </div>
       </header>
     </div>
