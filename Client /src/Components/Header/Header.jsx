@@ -1,5 +1,3 @@
-
-
 const Header = ({startTour}) => {
   return (
     <div className="header-section">
