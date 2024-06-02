@@ -43,6 +43,7 @@
 ## Table of Contents
 
 - [Features](#features)
+- [Demo](#demo)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [License](#license)
@@ -73,6 +74,10 @@
     <summary> Visualization </summary>
     <img src="https://github.com/Ujj1225/EchoSphere/blob/main/Client%20/src/assets/images/img3.png" width=750/>
   </details>
+
+## Demo
+
+[echosphere.webm](https://github.com/Ujj1225/EchoSphere/assets/97169735/c5064040-e1dd-4a55-8158-2f2711a31851)
 
 ## Installation
 
